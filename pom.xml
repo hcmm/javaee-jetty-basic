@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>swf</groupId>
+  <artifactId>swf</artifactId>
+  <packaging>war</packaging>
+  <version>1.0</version>
+  <name>swf</name>
+  <profiles>
+    <profile>
+      <id>jetty</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <finalName>swf</finalName>
+        <plugins>
+          <plugin>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jetty-maven-plugin</artifactId>
+            <version>8.1.4.v20120524</version>
+            <configuration>
+              <webAppConfig>
+                <contextPath>/${project.name}</contextPath>
+              </webAppConfig>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>
